@@ -17,7 +17,7 @@ const NewsBoard = ({category}) => {
     };
 
     fetchArticles();
-  }, []); // Run once on component mount
+  }, [category]); // Run once on component mount
 
   return (
     <div>
