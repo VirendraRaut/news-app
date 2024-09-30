@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({ setCategory }) => {
   return (
     <nav
       className="navbar navbar-expand-lg bg-body-tertiary "
@@ -20,20 +20,44 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="#">
-              Home
-            </a>
-            <a className="nav-link" href="#">
-              Features
-            </a>
-            <a className="nav-link" href="#">
-              Pricing
-            </a>
-            <a className="nav-link disabled" aria-disabled="true">
-              Disabled
-            </a>
-          </div>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory("business")}>
+                Business
+              </div>
+            </li>
+            <li className="nav-item">
+              <div
+                className="nav-link"
+                onClick={() => setCategory("entertainment")}
+              >
+                Entertainment
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory("health")}>
+                Health
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory("science")}>
+                Science
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory("sports")}>
+                Sports
+              </div>
+            </li>
+            <li className="nav-item">
+              <div
+                className="nav-link"
+                onClick={() => setCategory("technology")}
+              >
+                Technology
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
