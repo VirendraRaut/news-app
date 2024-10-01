@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 
-const NewsBoard = ({category}) => {
+const NewsBoard = ({ category }) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -9,6 +9,7 @@ const NewsBoard = ({category}) => {
       const apiKey = import.meta.env.VITE_API_KEY;
       console.log(apiKey); // Check if the API key is being correctly loaded
       const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
+
       const response = await fetch(url);
       const data = await response.json();
       if (data.articles) {
