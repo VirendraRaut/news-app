@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 
-const NewsBoard = ({ category }) => {
+const NewsBoard = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const NewsBoard = ({ category }) => {
     };
 
     fetchArticles();
-  }, [category]); // Run once on component mount
+  }, []); // Run once on component mount
 
   return (
     <div>
