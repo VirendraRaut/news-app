@@ -8,13 +8,13 @@ const NewsBoard = () => {
     const fetchArticles = async () => {
       const apiKey = import.meta.env.VITE_API_KEY;
       console.log(apiKey); // Check if the API key is being correctly loaded
-      const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
-      // const url = `https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=${apiKey}`;
+      // const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
+      const url = `https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=${apiKey}`;
 
       const response = await fetch(url);
       const data = await response.json();
       if (data.articles) {
-        console.log(data.articles);
+        console.log(data);
         setArticles(data.articles);
       }
     };
